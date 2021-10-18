@@ -12,7 +12,7 @@ $(document).ready(function(){
 		
 						if (data.existe==true){
 						alert("Bienvenido a la tienda " + elUsuario);
-						window.location.href = "login2.html";
+						window.location.href = "menu.html";
 						
 						
 						}

@@ -24,7 +24,6 @@ public class VentaDAO {
 				venta.setId_usuario(res.getLong("id_usuario"));
 				venta.setNombre(res.getString("nombre"));
 				venta.setTotaliva(res.getInt("totaliva"));
-				venta.setNumrecibo(res.getInt("numrecibo"));
 				misVentas.add(venta);
 			}
 			res.close();
@@ -56,7 +55,7 @@ public class VentaDAO {
 				venta.setId_usuario(res.getLong("id_usuario"));
 				venta.setNombre(res.getString("nombre"));
 				venta.setTotaliva(res.getInt("totaliva"));
-				venta.setNumrecibo(res.getInt("numrecibo"));
+
 				misVentas.add(venta);;
 			}
 			res.close();
@@ -88,15 +87,37 @@ public class VentaDAO {
 		
 		return existe;
 	}
+	
+
+	public boolean existeVenta2(long id_usuario) {
+		boolean existe = false;
+		Conexion conex = new Conexion();
+		try {
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM ventas WHERE id_usuario=?");
+			
+			consulta.setLong(1,id_usuario);
+			ResultSet res = consulta.executeQuery();
+			if (res.next()) {
+				existe = true;
+			}
+			res.close();
+			consulta.close();
+			conex.desconectar();
+		}catch(Exception e) {
+			System.out.println("No se pudo verificar si existe la venta");
+		}
+		
+		return existe;
+	}
 
 	public boolean crearVenta(VentaVO Venta) {
 		boolean swCrear = false;
-		if(!existeVenta (Venta.getId_usuario())) 	{
+		if(!existeVenta2 (Venta.getId_usuario())) 	{
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
 				String SQL = "INSERT INTO ventas (id_usuario,nombre,totaliva) VALUES ("+
-						Venta.getId_usuario()+",'"+ Venta.getNombre()+"','"+Venta.getTotaliva()+"','"+ Venta.getNumrecibo()+"');";
+						Venta.getId_usuario()+",'"+ Venta.getNombre()+"','"+Venta.getTotaliva()+"');";
 				((java.sql.Statement)consulta).executeUpdate(SQL);
 				((java.sql.Statement) consulta).close();
 				conex.desconectar();
@@ -137,7 +158,7 @@ public class VentaDAO {
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
 				String SQL ="UPDATE ventas SET nombre='"+Venta.getNombre()+"',"+
-				"totaliva='"+Venta.getTotaliva()+"','"+ Venta.getNumrecibo()+"' WHERE id_usuario="+Venta.getId_usuario();
+				"totaliva='"+Venta.getTotaliva()+"' WHERE id_usuario="+Venta.getId_usuario();
 				((java.sql.Statement) consulta).executeUpdate(SQL);
 				((java.sql.Statement) consulta).close();
 				

@@ -49,14 +49,14 @@ $("#listarV").click(function(){
             if(status=="success"){
                 let longitud = data.length;
                 let salida ="<br><table>";
-                salida = salida + "<tr><th colspan='4'>TABLA DE VENTAS</th></tr><tr>><td>NUMERO R</td><td>CEDULA</td><td>NOMBRE</td><td>TOTAL</td></tr>";
+                salida = salida + "<tr><th colspan='3'>TABLA DE VENTAS</th></tr><tr><td>CEDULA CLIENTE</td><td>NOMBRE CLIENTE</td><td>TOTAL</td></tr>";
                 for(let i=0;i<longitud;i++){
                     salida = salida + "<tr>";
                     salida = salida + "<td>"+data[i].id_usuario+"</td>";
                     
 					salida = salida + "<td>"+data[i].nombre+"</td>";
+
 					salida = salida + "<td>"+data[i].totaliva+"</td>";
-					salida = salida + "<td>"+data[i].numrecibo+"</td>";
                 }
                 salida = salida +"</table>";
                 $("#mensaje").html(salida);

@@ -41,14 +41,14 @@ public class VentaController {
 	
 	
 	@RequestMapping("/crearventa")
-	public boolean crearVenta(String id_usuario, String nombre,int totaliva, int numrecibo){
+	public boolean crearVenta(String id_usuario, String nombre,int totaliva){
 		VentaDAO dao = new VentaDAO();
 		VentaVO venta = new VentaVO();
 	
 		venta.setId_usuario(Long.parseLong(id_usuario));
 		venta.setNombre(nombre);
 		venta.setTotaliva(totaliva);
-		venta.setNumrecibo(numrecibo);
+
 		
 		
 		return dao.crearVenta(venta);

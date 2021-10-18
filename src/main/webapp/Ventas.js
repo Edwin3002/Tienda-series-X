@@ -66,6 +66,7 @@ $("#buscarP").click(function(){
                 $("#codigoP").val(data[0].id_usuario);
                 $("#nombreP").val(data[0].nombre);
 				$("#precioP").val(data[0].precio); 
+				$("#ivaP").val(data[0].iva); 
 				}else{
                 $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  producto no encontrado</div>");
             }                  
@@ -76,13 +77,12 @@ $("#agregarV").click(function(){
         let elid = $("#idC").val();
 		let elnombre = $("#nombreC").val();
 		let eltotaliva= $("#totalivaP").val();
-		let elnumrecibo= $("#numreciboP").val();
 		
-        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva, numrecibo:elnumrecibo},function(data, status){
+        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva},function(data, status){
             if(data==true){
                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  La venta 1 fue creada</div>");
             }else{
-                $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear la 1, ya existe</div>");
+                $("#mensaje").html("<div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear 1, ya existe</div>");
          }
         });
     });
@@ -94,9 +94,9 @@ $("#agregarV").click(function(){
 		
         $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva},function(data, status){
             if(data==true){
-               $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  La venta 2 fue creada</div>");
+               $("#mensaje2").html("<div class='alertv'><i class='fas fa-check-circle'></i>  La venta 2 fue creada</div>");
             }else{
-                $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear 2, ya existe</div>");
+                $("#mensaje2").html("<div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear 2, ya existe</div>");
          }
         });
     });
@@ -108,9 +108,9 @@ $("#agregarV").click(function(){
 		
         $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva},function(data, status){
             if(data==true){
-               $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  La venta 3 fue creada</div>");
+               $("#mensaje3").html("<div class='alertv'><i class='fas fa-check-circle'></i>  La venta 3 fue creada</div>");
             }else{
-                $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear 3, ya existe</div>");
+                $("#mensaje3").html("<div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear 3, ya existe</div>");
          }
         });
     });
@@ -158,6 +158,7 @@ $("#buscarP").click(function(){
                 $("#codigoP2").val(data[0].id_usuario);
                 $("#nombreP2").val(data[0].nombre);
 				$("#precioP2").val(data[0].precio); 
+				$("#ivaP2").val(data[0].iva); 
 				}else{
                 $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  producto 2 no encontrado</div>");
             }                  
@@ -175,6 +176,7 @@ $("#buscarP").click(function(){
                 $("#codigoP3").val(data[0].id_usuario);
                 $("#nombreP3").val(data[0].nombre);
 				$("#precioP3").val(data[0].precio); 
+				$("#ivaP3").val(data[0].iva); 
 				}else{
                 $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  producto 3 no encontrado</div>");
             }                  

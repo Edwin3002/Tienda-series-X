@@ -4,14 +4,8 @@ public class VentaVO {
 	private Long id_usuario;
 	private String nombre;
 	private int totaliva;
-	private int numrecibo;
+
 	
-	public int getNumrecibo() {
-		return numrecibo;
-	}
-	public void setNumrecibo(int numrecibo) {
-		this.numrecibo = numrecibo;
-	}
 	public Long getId_usuario() {
 		return id_usuario;
 	}

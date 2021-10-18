@@ -22,8 +22,6 @@ public class ClienteDAO {
 			while(res.next()){
 				ClienteVO Cliente = new ClienteVO();
 				Cliente.setId_usuario(res.getLong("id_usuario"));
-				
-				
 				Cliente.setDireccion(res.getString("direccion"));
 				Cliente.setTelefono(res.getString("telefono"));
 				Cliente.setNombre(res.getString("nombre"));
