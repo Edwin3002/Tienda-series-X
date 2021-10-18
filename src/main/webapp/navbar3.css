@@ -1,0 +1,113 @@
+@charset "ISO-8859-1";
+body{
+    background-color: #eee;
+}
+
+.nav{
+    list-style-type: none;
+    
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    
+}
+
+.nav li{
+    float: left;
+
+}
+
+#iceblue{
+        color: #02a5ff;
+}
+
+#iceblue:hover{
+        color: #000000;
+}
+
+#ice2{
+    color: #9bc848;
+}
+
+.nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    
+}
+
+ul a i:hover{
+    color: #9bc848;
+}
+
+
+.nav li:hover{
+    background-color: #328135;
+    
+
+    text-decoration: none;
+}
+
+
+.active{
+    background-color: #4caf50;
+}
+
+.box2{
+ 
+    margin: auto;
+    background-color: white;
+    padding: 5px 40px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    
+}
+
+h1{
+    text-align: center;
+}
+
+
+.games2{
+    
+    border: solid 1px ;
+    padding: 5px;
+    width: 100px;
+}
+
+table{
+    margin: auto;
+    width: 100%;
+
+}
+
+td{
+    width: 100px;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: serif;
+    font-size: 130%;
+    
+}
+
+td img{
+    width: 100%;
+    max-width: 160px;
+    min-width: 40px;
+    max-height: 200px;
+    min-height: 50px;
+    margin-top: 0%;
+}
+
+img:hover{
+    transform: scale(1.05, 1.05);
+}
