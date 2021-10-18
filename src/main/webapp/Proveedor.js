@@ -50,7 +50,7 @@ $(document).ready(function(){
 		
         $.post("http://localhost:8080/crearproveedor",{id_usuario: elid, nombre: elnombre, ciudad: laciudad, direccion: ladireccion, telefono: eltelefono,},function(data, status){
             if(data==true){
-                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  El proveedor fue actualizado</div>");
+                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  El proveedor fue creado</div>");
             }else{
                 $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear, ya existe</div>");
         }

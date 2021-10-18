@@ -20,7 +20,7 @@
 <body>
         <ul>
         <li><a  href=""> Tienda series <i id="ice2" class="fab fa-xbox"></i></a></li>
-        <li ><a href="http://localhost:8080/menu.html"> Menu <i id="ice" class="fas fa-home"></i></a></li>
+         <li ><a href="http://localhost:8080/menu.html"> Juegos <i id="ice" class="fas fa-gamepad"></i></a></li>
         <li ><a href="http://localhost:8080/login2.html"> Usuarios <i id="ice" class="far fa-user-circle"></i></a></li>
         <li ><a href="http://localhost:8080/cliente.html">Clientes <i id="ice" class="fas fa-user"></i></a></li>
         <li ><a href="http://localhost:8080/proveedor.html">Proveedores <i id="ice" class="fas fa-truck-moving"></i></a></li>
@@ -35,7 +35,7 @@
     <form action="">
         <h3><i class="fas fa-user"></i> Cliente</h3>
         <input class="filass" type="text" id="idC" placeholder="Cedula">
-        <input class="filass" type="text" id="nombreC" placeholder="Nombre">
+        <input class="filass" type="text" id="nombreC" placeholder="Nombre" disabled>
         
         <div>
             <input type="reset" value="Limpiar todo" target="_parent"  class="boton">
@@ -45,49 +45,49 @@
         
         <h3><i class="fas fa-box-open"></i> Producto 1</h3>
         <input type="text" id="codigoP" placeholder="Codigo" title="Codigo">
-        <input type="text" id="nombreP" placeholder="Nombre" title="Nombre">
-        <input type="text" id="precioP" placeholder="Precio por U." title="Precio por U.">
+        <input type="text" id="nombreP" placeholder="Nombre" title="Nombre" disabled>
+        <input type="text" id="precioP" placeholder="Precio por U." title="Precio por U." disabled>
 
         
-        <input type="text" id="cantidadP" placeholder="Cantidad" title="Cantidad">
+        <input type="text" id="cantidadP" placeholder="Cantidad" title="Cantidad" >
         <input type="text" id="dis4" placeholder="" title="" disabled	>
-        <input type="text" id="valorP" placeholder="Valor total" title="Valor total">
+        <input type="text" id="valorP" placeholder="Valor total" title="Valor total" disabled>
 
         <input type="text" id="dis2" placeholder="" title="" disabled	>
-        <input type="text" id="ivaP" placeholder="Iva" title="Iva">
+        <input type="text" id="ivaP" placeholder="Iva" title="Iva" disabled>
         <input type="text" id="dis2" placeholder="" title="" disabled	>
-        <input type="text" id="totalivaP" placeholder="Total con iva" title="Total con iva"><br>              <!-- Aquiiiiiiiiiii -->
+        <input type="text" id="totalivaP" placeholder="Total con iva" title="Total con iva" disabled><br>              <!-- Aquiiiiiiiiiii -->
         
         <h3><i class="fas fa-box-open"></i> Producto 2</h3>
         <input type="text" id="codigoP2" placeholder="Codigo" title="Codigo">
-        <input type="text" id="nombreP2" placeholder="Nombre" title="Nombre">
-        <input type="text" id="precioP2" placeholder="Precio por U." title="Precio por U.">
+        <input type="text" id="nombreP2" placeholder="Nombre" title="Nombre" disabled>
+        <input type="text" id="precioP2" placeholder="Precio por U." title="Precio por U." disabled>
 
         
         <input type="text" id="cantidadP2" placeholder="Cantidad" title="Cantidad">
         <input type="text" id="dis4" placeholder="" title="" disabled	>
-        <input type="text" id="valorP2" placeholder="Valor total" title="Valor total">
+        <input type="text" id="valorP2" placeholder="Valor total" title="Valor total" disabled>
         <input type="text" id="dis2" placeholder="" title="" disabled	>
-        <input type="text" id="ivaP2" placeholder="Iva" title="Iva">
+        <input type="text" id="ivaP2" placeholder="Iva" title="Iva" disabled>
         <input type="text" id="dis2" placeholder="" title="" disabled	>
-        <input type="text" id="totalivaP2" placeholder="Total con iva" title="Total con iva"><br>
+        <input type="text" id="totalivaP2" placeholder="Total con iva" title="Total con iva" disabled><br>
         
         
         <h3><i class="fas fa-box-open"></i> Producto 3</h3>
         
         <input type="text" id="codigoP3" placeholder="Codigo" title="Codigo">
-        <input type="text" id="nombreP3" placeholder="Nombre" title="Nombre">
-        <input type="text" id="precioP3" placeholder="Precio por U." title="Precio por U.">
+        <input type="text" id="nombreP3" placeholder="Nombre" title="Nombre" disabled>
+        <input type="text" id="precioP3" placeholder="Precio por U." title="Precio por U." disabled>
 
         
         <input type="text" id="cantidadP3" placeholder="Cantidad" title="Cantidad">
         <input type="text" id="dis4" placeholder="" title="" disabled	>
 
-        <input type="text" id="valorP3" placeholder="Valor total" title="Valor total">
+        <input type="text" id="valorP3" placeholder="Valor total" title="Valor total" disabled>
         <input type="text" id="dis3" placeholder="" title="" disabled	>
-        <input type="text" id="ivaP3" placeholder="Iva" title="Iva">
-        <input type="text" id="dis3" placeholder="" title="" disabled	>
-        <input type="text" id="totalivaP3" placeholder="Total con iva" title="Total con iva"><br>
+        <input type="text" id="ivaP3" placeholder="Iva" title="Iva" disabled>
+        <input type="text" id="dis3" placeholder="" title=""	>
+        <input type="text" id="totalivaP3" placeholder="Total con iva" title="Total con iva" disabled><br>
         
         </form>
         
@@ -96,9 +96,9 @@
         
                 <input type="button" value="Buscar Produc."   id="buscarP" target="_parent" class="boton">
                 <input type="button" value="Listar Produc."   id="listarP" target="_parent"  class="boton">
-                <input  type="button" value="Listar ventas" id="listarV" target="_parent"  class="boton">
-                <input type="button" value="Registrar venta" id="agregarV">
-                <input type="button" onclick="Multiplicar()" value="Multiplicar" class="boton">
+          
+                <input type="button" onclick="Multiplicar()" value="Calcular" class="boton">
+                      <input type="button" value="Registrar venta" id="agregarV">
                 
 
 
@@ -118,43 +118,50 @@
    				 </div>
    				  <script>
         function Multiplicar(){
+        	
             let num1 = document.getElementById("precioP").value;
             let num2 = document.getElementById("cantidadP").value;
             let num3 = document.getElementById("ivaP").value;
             
             let producto = num1 * num2;
+            if (producto !== 0){
             document.getElementById("valorP").value = producto;
-           
+            }
 
             let producto2= Number.parseInt(((num3/100 ) + 1) * producto);
-
+			
+            
+            if (producto2 !== 0){
             document.getElementById("totalivaP").value = producto2;
- 
+            }
             //*******************************2
             let num12 = document.getElementById("precioP2").value;
             let num22 = document.getElementById("cantidadP2").value;
             let num32 = document.getElementById("ivaP2").value;
             
             let producto3 = num12 * num22;
+            if (producto3 !== 0){
             document.getElementById("valorP2").value = producto3;
-           
+            }
 
             let producto4= Number.parseInt(((num32/100 ) + 1) * producto3);
-
+            if (producto4 !== 0){
             document.getElementById("totalivaP2").value = producto4;
-            
-          //*******************************2
+            }
+          //*******************************3
             let num13 = document.getElementById("precioP3").value;
             let num23 = document.getElementById("cantidadP3").value;
             let num33 = document.getElementById("ivaP3").value;
             
             let producto5 = num13 * num23;
+            if (producto5 !== 0){
             document.getElementById("valorP3").value = producto5;
-           
+            }
 
             let producto6= Number.parseInt(((num33/100 ) + 1) * producto5);
-
-            document.getElementById("totalivaP3").value = producto4;
+            if (producto6 !== 0){
+            document.getElementById("totalivaP3").value = producto6;
+            }
         };
         
         

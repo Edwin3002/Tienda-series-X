@@ -5,7 +5,7 @@ $(document).ready(function(){
             if(status=="success"){
                 let longitud = data.length;
                 let salida ="<br><table>";
-                salida = salida + "<tr><th colspan='6'>TABLA DE PRODUCTOS</th></tr><tr><td>ID</td><td>NOMBRE</td><td>NITPROVE</td><td>PRECIO</td><td>IVA</td><td>VENTA</td></tr>";
+                salida = salida + "<tr><th colspan='6'>TABLA DE PRODUCTOS</th></tr><tr><td>CODIGO</td><td>NOMBRE</td><td>NIT PROVEEDOR</td><td>PRECIO</td><td>IVA</td><td>VENTA</td></tr>";
                 for(let i=0;i<longitud;i++){
                     salida = salida + "<tr>";
                     salida = salida + "<td>"+data[i].id_usuario+"</td>";

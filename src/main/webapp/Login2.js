@@ -50,7 +50,7 @@ $(document).ready(function(){
         let laclave = $("#clave").val();
         $.post("http://localhost:8080/crearusuario",{id_usuario: elid, nombre: elnombre, correo: elcorreo, usuario: elusuario, clave: laclave},function(data, status){
             if(data==true){
-                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  El usuario fue actualizado</div>");
+                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  El usuario fue creado</div>");
             }else{
                 $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear, ya existe</div>");
         }

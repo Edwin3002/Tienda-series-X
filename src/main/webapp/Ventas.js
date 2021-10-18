@@ -76,9 +76,12 @@ $("#buscarP").click(function(){
 $("#agregarV").click(function(){
         let elid = $("#idC").val();
 		let elnombre = $("#nombreC").val();
+		let eljuego = $("#nombreP").val();
+		let lacantidad = $("#cantidadP").val();
 		let eltotaliva= $("#totalivaP").val();
 		
-        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva},function(data, status){
+		
+        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva, juego: eljuego, cantidad:lacantidad},function(data, status){
             if(data==true){
                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  La venta 1 fue creada</div>");
             }else{

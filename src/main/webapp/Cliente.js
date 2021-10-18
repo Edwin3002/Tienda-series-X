@@ -53,7 +53,7 @@ $(document).ready(function(){
         $.post("http://localhost:8080/crearcliente",{id_usuario: elid, direccion: ladireccion, telefono: eltelefono, nombre: elnombre, correo: elcorreo},function(data, status){
             if(data==true){
 				
-                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  El cliente fue actualizado</div>");
+                $("#mensaje").html("<br><div class='alertv'><i class='fas fa-check-circle'></i>  El cliente fue creado</div>");
             }else{
                 $("#mensaje").html("<br><div class='alertf'><i class='fas fa-exclamation-triangle'></i>  No se pudo crear, ya existe</div>");
         

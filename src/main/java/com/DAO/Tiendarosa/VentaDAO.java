@@ -24,6 +24,9 @@ public class VentaDAO {
 				venta.setId_usuario(res.getLong("id_usuario"));
 				venta.setNombre(res.getString("nombre"));
 				venta.setTotaliva(res.getInt("totaliva"));
+				venta.setJuego(res.getString("juego"));
+				venta.setCantidad(res.getInt("cantidad"));
+				venta.setN_recibo(res.getInt("n_recibo"));
 				misVentas.add(venta);
 			}
 			res.close();
@@ -54,6 +57,8 @@ public class VentaDAO {
 				
 				venta.setId_usuario(res.getLong("id_usuario"));
 				venta.setNombre(res.getString("nombre"));
+				venta.setJuego(res.getString("juego"));
+				venta.setCantidad(res.getInt("cantidad"));
 				venta.setTotaliva(res.getInt("totaliva"));
 
 				misVentas.add(venta);;
@@ -116,8 +121,8 @@ public class VentaDAO {
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
-				String SQL = "INSERT INTO ventas (id_usuario,nombre,totaliva) VALUES ("+
-						Venta.getId_usuario()+",'"+ Venta.getNombre()+"','"+Venta.getTotaliva()+"');";
+				String SQL = "INSERT INTO ventas (id_usuario,nombre,juego, cantidad, totaliva) VALUES ("+
+						Venta.getId_usuario()+",'"+ Venta.getNombre()+"','"+ Venta.getJuego()+"','"+ Venta.getCantidad()+"','"+Venta.getTotaliva()+"');";
 				((java.sql.Statement)consulta).executeUpdate(SQL);
 				((java.sql.Statement) consulta).close();
 				conex.desconectar();
