@@ -93,9 +93,11 @@ $("#agregarV").click(function(){
 $("#agregarV").click(function(){
         let elid = $("#idC").val();
 		let elnombre = $("#nombreC").val();
+		let eljuego = $("#nombreP2").val();
+		let lacantidad = $("#cantidadP2").val();
 		let eltotaliva= $("#totalivaP2").val();
 		
-        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva},function(data, status){
+        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva, juego: eljuego, cantidad:lacantidad},function(data, status){
             if(data==true){
                $("#mensaje2").html("<div class='alertv'><i class='fas fa-check-circle'></i>  La venta 2 fue creada</div>");
             }else{
@@ -107,9 +109,11 @@ $("#agregarV").click(function(){
 $("#agregarV").click(function(){
         let elid = $("#idC").val();
 		let elnombre = $("#nombreC").val();
+		let eljuego = $("#nombreP3").val();
+		let lacantidad = $("#cantidadP3").val();
 		let eltotaliva= $("#totalivaP3").val();
 		
-        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva},function(data, status){
+        $.post("http://localhost:8080/crearventa",{id_usuario: elid, nombre: elnombre,totaliva: eltotaliva, juego: eljuego, cantidad:lacantidad},function(data, status){
             if(data==true){
                $("#mensaje3").html("<div class='alertv'><i class='fas fa-check-circle'></i>  La venta 3 fue creada</div>");
             }else{

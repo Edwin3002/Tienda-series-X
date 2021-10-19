@@ -72,13 +72,13 @@ public class VentaDAO {
 		return misVentas;
 	}
 	
-	public boolean existeVenta(long id_usuario) {
+	public boolean existeVenta(int n_recibo) {
 		boolean existe = false;
 		Conexion conex = new Conexion();
 		try {
-			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM ventas WHERE id_usuario=?");
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM ventas WHERE n_recibo=?");
 			
-			consulta.setLong(1, id_usuario);
+			consulta.setInt(1, n_recibo);
 			ResultSet res = consulta.executeQuery();
 			if (res.next()) {
 				existe = true;
@@ -94,13 +94,13 @@ public class VentaDAO {
 	}
 	
 
-	public boolean existeVenta2(long id_usuario) {
+	public boolean existeVenta2(int n_recibo) {
 		boolean existe = false;
 		Conexion conex = new Conexion();
 		try {
-			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM ventas WHERE id_usuario=?");
+			PreparedStatement consulta = conex.getConnection().prepareStatement("SELECT * FROM ventas WHERE n_recibo=?");
 			
-			consulta.setLong(1,id_usuario);
+			consulta.setLong(1,n_recibo);
 			ResultSet res = consulta.executeQuery();
 			if (res.next()) {
 				existe = true;
@@ -117,7 +117,7 @@ public class VentaDAO {
 
 	public boolean crearVenta(VentaVO Venta) {
 		boolean swCrear = false;
-		if(!existeVenta2 (Venta.getId_usuario())) 	{
+		if(!existeVenta2 (Venta.getN_recibo())) 	{
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
@@ -136,13 +136,13 @@ public class VentaDAO {
 		return swCrear;
 	}
 	
-	public boolean borrarVenta(long id_usuario) {
+	public boolean borrarVenta(int n_recibo) {
 		boolean swCrear = false;
-		if(existeVenta(id_usuario)) {
+		if(existeVenta(n_recibo)) {
 			Conexion conex = new Conexion();
 					try {
 						Statement consulta = (Statement) conex.getConnection().createStatement();
-						String SQL = "DELETE FROM ventas WHERE id_usuario = "+id_usuario; 
+						String SQL = "DELETE FROM ventas WHERE n_recibo = "+n_recibo; 
 						/*((java.sql.Statement))*/ consulta.executeUpdate(SQL);
 						/*((java.sql.Statement))*/consulta.close();
 						conex.desconectar();
@@ -158,12 +158,12 @@ public class VentaDAO {
 	
 	public boolean actualizarVenta(VentaVO Venta) {
 		boolean swActualizar = false;
-		if(existeVenta(Venta.getId_usuario())) {
+		if(existeVenta(Venta.getN_recibo())) {
 			Conexion conex = new Conexion();
 			try {
 				Statement consulta = (Statement) conex.getConnection().createStatement();
 				String SQL ="UPDATE ventas SET nombre='"+Venta.getNombre()+"',"+
-				"totaliva='"+Venta.getTotaliva()+"' WHERE id_usuario="+Venta.getId_usuario();
+				"totaliva='"+Venta.getTotaliva()+"' WHERE n_recibo="+Venta.getN_recibo();
 				((java.sql.Statement) consulta).executeUpdate(SQL);
 				((java.sql.Statement) consulta).close();
 				
